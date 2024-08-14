@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;
+        justify-content: center;
+      }
+      .gallery img {
+        width: 400px;
+        height: 300px;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+      .gallery img:hover {
+        transform: scale(1.05);
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+      }
+      .modal-content {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        max-width: 600px;
+        width: 100%;
+      }
+      .modal img {
+        max-width: 100%;
+        height: auto;
+        padding-bottom: 10px;
+      }
+      .modal button {
+        margin-top: 10px;
+        padding: 5px 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"
+            ><i class="fa-solid fa-file fa-lg" style="color: #b197fc"></i
+          ></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Home</a
+              >
+              <a class="nav-link" href="Gallery.html">Gallery</a>
+              <a class="nav-link" href="projects.html">Projects</a>
+              <a class="nav-link" href="contact.html">Contact</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section id="gallery" class="container my-5">
+      <h2 class="text-center pb-4">My Projects</h2>
+      <div class="gallery">
+        <div>
+          <img
+            src="proj1.jpg"
+            alt="Project 1"
+            data-description="Trawic is a revolunitory travel booking system which provides the
+            user with the free to go where their heart desires."
+            class="shadow-lg"
+          />
+        </div>
+        <div>
+          <img
+            src="proj2.jpg"
+            alt="Project 2"
+            data-description="Oakley is a one stop shopping wesite"
+            class="shadow-lg"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal for displaying the enlarged image -->
+    <div class="modal" id="imageModal">
+      <div class="modal-content">
+        <img src="" alt="" id="modalImage" />
+        <p id="modalDescription"></p>
+        <button id="closeModal">Close</button>
+      </div>
+    </div>
+
+    <script>
+      // JavaScript to handle image clicks and modal display
+      document.querySelectorAll(".gallery img").forEach((image) => {
+        image.addEventListener("click", () => {
+          const src = image.getAttribute("src");
+          const alt = image.getAttribute("alt");
+          const description = image.getAttribute("data-description");
+
+          document.getElementById("modalImage").setAttribute("src", src);
+          document.getElementById("modalImage").setAttribute("alt", alt);
+          document.getElementById("modalDescription").textContent = description;
+
+          document.getElementById("imageModal").style.display = "flex";
+        });
+      });
+
+      document.getElementById("closeModal").addEventListener("click", () => {
+        document.getElementById("imageModal").style.display = "none";
+      });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/dffc310600.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projects xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="projects.xsd">
+    <project>
+        <title>Trawic</title>
+        <description>Trawic is a revolunitory travel booking system which provides the
+          user with the free to go where their heart desires.</description>
+        <technologies>HTML, CSS, JavaScript, BootStrap</technologies>
+    </project>
+</projects>
