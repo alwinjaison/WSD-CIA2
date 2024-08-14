@@ -9,15 +9,15 @@ btn.addEventListener("click", () => {
   };
   xreq.send();
 });
-function renderHTML(projects) {
-  for (i = 0; i < projects.length; i++) {
+function renderHTML(data) {
+  for (i = 0; i < data.length; i++) {
     const htmlString =
       "<p>" +
-      projects[i].title +
+      data[i].title +
       " <br> " +
-      projects[i].description +
+      data[i].description +
       " <br> " +
-      projects[i].technologies +
+      data[i].technologies +
       "</p>";
     animal.insertAdjacentHTML("beforeend", htmlString);
   }

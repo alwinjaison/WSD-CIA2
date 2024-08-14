@@ -1,14 +1,12 @@
-{
-  "projects": [
-    {
-      "title": "Trawic",
-      "description": "Trawic is a revolutionary travel booking system which provides the user with the freedom to go where their heart desires.",
-      "technologies": "HTML, CSS, JavaScript, BootStrap"
-    },
-    {
-      "title": "Oakley",
-      "description": "Oakley is a one stop shopping website.",
-      "technologies": "HTML, CSS, JavaScript, BootStrap, JavaScript"
-    }
-  ]
-}
+[
+  {
+    "title": "Trawic",
+    "description": "Trawic is a revolutionary travel booking system which provides the user with the freedom to go where their heart desires.",
+    "technologies": "HTML, CSS, JavaScript, BootStrap"
+  },
+  {
+    "title": "Oakley",
+    "description": "Oakley is a one stop shopping website.",
+    "technologies": "HTML, CSS, JavaScript, BootStrap, JavaScript"
+  }
+]
